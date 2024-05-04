@@ -7,7 +7,6 @@ public class DiscordBot
         try
         {
             ConfigManager.init();
-            DatabaseManager.init();
             BotManager.init();
         }
 

@@ -5,8 +5,8 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>me.angelolz</groupId>
-    <artifactId>DiscordBotTemplate</artifactId>
-    <version>0.0.0</version>
+    <artifactId>SpeggBot</artifactId>
+    <version>1.0</version>
 
     <properties>
         <maven.compiler.source>16</maven.compiler.source>
@@ -40,7 +40,7 @@
         <dependency>
             <groupId>net.dv8tion</groupId>
             <artifactId>JDA</artifactId>
-            <version>5.0.0-beta.19</version>
+            <version>5.0.0-beta.21</version>
         </dependency>
 
         <!-- JDA addon -->

@@ -2,11 +2,11 @@ package main;
 
 import com.jagrosh.jdautilities.command.CommandClientBuilder;
 import commands.*;
+import listeners.MessageListener;
 import net.dv8tion.jda.api.OnlineStatus;
 import net.dv8tion.jda.api.entities.Activity;
 import net.dv8tion.jda.api.requests.GatewayIntent;
 import net.dv8tion.jda.api.sharding.DefaultShardManagerBuilder;
-import schedulers.ScheduledTasks;
 
 public class BotManager
 {
@@ -43,7 +43,7 @@ public class BotManager
                                   .setStatus(OnlineStatus.DO_NOT_DISTURB)
                                   .enableIntents(GatewayIntent.MESSAGE_CONTENT)
                                   .setActivity(Activity.playing("loading!! | " + ConfigManager.getPrefix() + "help"))
-                                  .addEventListeners(client.build(), new ScheduledTasks())
+                                  .addEventListeners(client.build(), new MessageListener())
                                   .build();
 
         uptime = System.currentTimeMillis();
