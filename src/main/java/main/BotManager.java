@@ -20,7 +20,7 @@ public class BotManager
 
         //bot client config
         client.useHelpBuilder(false);
-        client.setActivity(Activity.playing("with Discord! | " + ConfigManager.getPrefix() + "help"));
+        client.setActivity(Activity.playing("with ur mom lol | " + ConfigManager.getPrefix() + "help"));
         client.setOwnerId(ConfigManager.getOwnerId());
         client.setCoOwnerIds(ConfigManager.getCoOwnerId());
         client.setEmojis("✅", "⚠️", "❌");

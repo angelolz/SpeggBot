@@ -6,8 +6,8 @@ import java.util.Properties;
 
 public class ConfigManager
 {
-    private static final String PREFIX = "!";
-    private static final String VERSION = "0.0.0";
+    private static final String PREFIX = "sp!";
+    private static final String VERSION = "1.0.0";
     private static String token;
     private static String ownerId;
     private static String coOwnerId;
