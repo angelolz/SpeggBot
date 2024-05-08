@@ -2,6 +2,7 @@ package main;
 
 import com.jagrosh.jdautilities.command.CommandClientBuilder;
 import commands.*;
+import listeners.AmogusListener;
 import listeners.MessageListener;
 import net.dv8tion.jda.api.OnlineStatus;
 import net.dv8tion.jda.api.entities.Activity;
@@ -43,7 +44,7 @@ public class BotManager
                                   .setStatus(OnlineStatus.DO_NOT_DISTURB)
                                   .enableIntents(GatewayIntent.MESSAGE_CONTENT)
                                   .setActivity(Activity.playing("loading!! | " + ConfigManager.getPrefix() + "help"))
-                                  .addEventListeners(client.build(), new MessageListener())
+                                  .addEventListeners(client.build(), new MessageListener(), new AmogusListener())
                                   .build();
 
         uptime = System.currentTimeMillis();
