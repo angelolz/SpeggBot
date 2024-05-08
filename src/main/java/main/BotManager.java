@@ -22,8 +22,14 @@ public class BotManager
         client.useHelpBuilder(false);
         client.setActivity(Activity.playing("with Discord! | " + ConfigManager.getPrefix() + "help"));
         client.setOwnerId(ConfigManager.getOwnerId());
+        client.setCoOwnerIds(ConfigManager.getCoOwnerId());
         client.setEmojis("✅", "⚠️", "❌");
         client.setPrefix(ConfigManager.getPrefix());
+
+        //admin text commands
+        client.addCommands(
+            new Invite()
+        );
 
         //slash commands here
         client.addSlashCommands(
@@ -38,7 +44,7 @@ public class BotManager
         );
 
         // ONLY FOR TESTING, uncomment when testing
-        client.forceGuildOnly(ConfigManager.getTestingGuildId());
+//        client.forceGuildOnly(ConfigManager.getTestingGuildId());
 
         DefaultShardManagerBuilder.createLight(ConfigManager.getToken())
                                   .setStatus(OnlineStatus.DO_NOT_DISTURB)

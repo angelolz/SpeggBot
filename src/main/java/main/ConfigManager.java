@@ -10,6 +10,7 @@ public class ConfigManager
     private static final String VERSION = "0.0.0";
     private static String token;
     private static String ownerId;
+    private static String coOwnerId;
     private static String testingGuildId;
 
     public static void init() throws IOException
@@ -20,6 +21,7 @@ public class ConfigManager
             prop.load(propFile);
             token = prop.getProperty("bot_token");
             ownerId = prop.getProperty("owner_id");
+            coOwnerId = prop.getProperty("coowner_id");
             testingGuildId = prop.getProperty("testing_guild_id", "0");
         }
     }
@@ -43,6 +45,8 @@ public class ConfigManager
     {
         return ownerId;
     }
+
+    public static String getCoOwnerId() { return coOwnerId; }
 
     public static String getTestingGuildId()
     {
