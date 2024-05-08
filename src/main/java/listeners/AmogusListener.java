@@ -55,6 +55,7 @@ public class AmogusListener extends ListenerAdapter
                 }
             }
         }
+
         catch(IOException e)
         {
             LoggerManager.getLogger().error("Couldn't get among us triggers: {}", e.getMessage());
