@@ -54,9 +54,9 @@ public class Help extends SlashCommand
     private MessageEmbed getEmbed(User user, String botAvatarUrl, List<Command> commands)
     {
         EmbedBuilder embed = new EmbedBuilder();
-        embed.setTitle("Discord Bot")
+        embed.setTitle("SpeggBot")
              .setColor(0x32CD32)
-             .setDescription("Here are a list of commands you can use!")
+             .setDescription("Here are a list of commands you can use! Please, **don't** ping me.")
              .setFooter(String.format("Created by: %s | Version: %s%nUptime: %s", user.getName(), ConfigManager.getVersion(), BotManager.getUptime()))
              .setThumbnail(botAvatarUrl);
 
