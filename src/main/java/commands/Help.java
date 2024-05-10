@@ -57,7 +57,7 @@ public class Help extends SlashCommand
         embed.setTitle("SpeggBot")
              .setColor(0x32CD32)
              .setDescription("Here are a list of commands you can use! Please, **don't** ping me.")
-             .setFooter(String.format("Created by: %s | Version: %s%nUptime: %s", user.getName(), ConfigManager.getVersion(), BotManager.getUptime()))
+             .setFooter(String.format("Created by: %s | Version: %s", user.getName(), ConfigManager.getVersion()))
              .setThumbnail(botAvatarUrl);
 
         for(Command command : commands)

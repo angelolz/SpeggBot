@@ -1,6 +1,6 @@
 package main;
 
-public class DiscordBot
+public class SpeggBot
 {
     public static void main(String[] args)
     {

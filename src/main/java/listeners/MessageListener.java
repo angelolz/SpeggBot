@@ -41,4 +41,8 @@ public class MessageListener extends ListenerAdapter
             LoggerManager.getLogger().error("Error getting a response, {}", e.getMessage());
         }
     }
+
+    public static Map<String, Long> getCooldowns() {
+        return cooldowns;
+    }
 }

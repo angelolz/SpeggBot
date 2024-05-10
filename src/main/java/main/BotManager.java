@@ -2,6 +2,7 @@ package main;
 
 import com.jagrosh.jdautilities.command.CommandClientBuilder;
 import commands.*;
+import commands.admincommands.Debug;
 import listeners.AmogusListener;
 import listeners.MessageListener;
 import net.dv8tion.jda.api.OnlineStatus;
@@ -28,7 +29,8 @@ public class BotManager
 
         //admin text commands
         client.addCommands(
-            new Invite()
+            new Invite(),
+            new Debug()
         );
 
         //slash commands here
@@ -54,23 +56,5 @@ public class BotManager
                                   .build();
 
         uptime = System.currentTimeMillis();
-    }
-
-    public static String getUptime()
-    {
-        long ms = System.currentTimeMillis() - uptime;
-        int days;
-        int hours;
-        int minutes;
-        int seconds;
-        String result;
-
-        seconds = (int) ((ms / 1000) % 60);
-        minutes = (int) ((ms / (1000 * 60)) % 60);
-        hours = (int) ((ms / (1000 * 60 * 60)) % 24);
-        days = (int) (ms / (1000 * 60 * 60 * 24));
-
-        result = days + " days, " + hours + " hours, " + minutes + " minutes, and " + seconds + " seconds";
-        return result;
     }
 }

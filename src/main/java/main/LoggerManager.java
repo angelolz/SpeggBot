@@ -10,7 +10,7 @@ public class LoggerManager
     public static Logger getLogger()
     {
         if(logger == null)
-            logger = LoggerFactory.getLogger(DiscordBot.class);
+            logger = LoggerFactory.getLogger(SpeggBot.class);
 
         return logger;
     }
