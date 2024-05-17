@@ -4,7 +4,6 @@ import com.jagrosh.jdautilities.command.Command;
 import com.jagrosh.jdautilities.command.CommandEvent;
 import com.jagrosh.jdautilities.command.SlashCommand;
 import com.jagrosh.jdautilities.command.SlashCommandEvent;
-import main.BotManager;
 import main.CommandTracker;
 import main.ConfigManager;
 import net.dv8tion.jda.api.EmbedBuilder;
