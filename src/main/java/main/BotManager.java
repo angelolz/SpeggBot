@@ -6,6 +6,7 @@ import commands.admincommands.Debug;
 import commands.admincommands.Invite;
 import commands.admincommands.Talk;
 import listeners.AmogusListener;
+import listeners.CrazyListener;
 import listeners.MessageListener;
 import net.dv8tion.jda.api.OnlineStatus;
 import net.dv8tion.jda.api.entities.Activity;
@@ -53,7 +54,7 @@ public class BotManager
                                   .setStatus(OnlineStatus.DO_NOT_DISTURB)
                                   .enableIntents(GatewayIntent.MESSAGE_CONTENT)
                                   .setActivity(Activity.playing("loading!! | " + ConfigManager.getPrefix() + "help"))
-                                  .addEventListeners(client.build(), new MessageListener(), new AmogusListener())
+                                  .addEventListeners(client.build(), new MessageListener(), new AmogusListener(), new CrazyListener())
                                   .build();
     }
 }
