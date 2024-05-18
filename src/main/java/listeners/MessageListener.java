@@ -36,10 +36,8 @@ public class MessageListener extends ListenerAdapter
         if(userId.equals(Statics.SOZEK_ID) || userId.equals(Statics.SOZEK_ALT_ID))
             sendFunnySozekMoment(event);
 
-        if(event.getMessage().getContentRaw().contains("meow :3"))
-        {
+        if(event.getMessage().getContentRaw().contains(":3"))
             sendMeow(event);
-        }
     }
 
     private void executePing(MessageReceivedEvent event)
@@ -86,7 +84,8 @@ public class MessageListener extends ListenerAdapter
         if(inCooldown(event.getAuthor().getId(), meowCoolDowns, Statics.MEOW_COOLDOWN_TIME_MS) || rng.nextDouble() > 0.25)
             return;
 
-        event.getChannel().sendMessage("meow :3").queue();
+        String[] responses = Statics.meowResponses;
+        event.getChannel().sendMessage(responses[rng.nextInt(responses.length)]).queue();
         meowCoolDowns.put(event.getAuthor().getId(), System.currentTimeMillis());
     }
 

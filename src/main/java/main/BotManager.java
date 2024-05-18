@@ -3,6 +3,8 @@ package main;
 import com.jagrosh.jdautilities.command.CommandClientBuilder;
 import commands.*;
 import commands.admincommands.Debug;
+import commands.admincommands.Invite;
+import commands.admincommands.Talk;
 import listeners.AmogusListener;
 import listeners.MessageListener;
 import net.dv8tion.jda.api.OnlineStatus;
@@ -12,8 +14,6 @@ import net.dv8tion.jda.api.sharding.DefaultShardManagerBuilder;
 
 public class BotManager
 {
-    private static long uptime;
-
     public static void init()
     {
         //create command builders and listeners
@@ -30,7 +30,8 @@ public class BotManager
         //admin text commands
         client.addCommands(
             new Invite(),
-            new Debug()
+            new Debug(),
+            new Talk()
         );
 
         //slash commands here
@@ -54,7 +55,5 @@ public class BotManager
                                   .setActivity(Activity.playing("loading!! | " + ConfigManager.getPrefix() + "help"))
                                   .addEventListeners(client.build(), new MessageListener(), new AmogusListener())
                                   .build();
-
-        uptime = System.currentTimeMillis();
     }
 }
