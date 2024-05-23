@@ -3,6 +3,7 @@ package commands.admincommands;
 import com.jagrosh.jdautilities.command.Command;
 import com.jagrosh.jdautilities.command.CommandEvent;
 import listeners.MessageListener;
+import listeners.SozekListener;
 import utils.ConvertTime;
 import utils.Statics;
 
@@ -63,7 +64,7 @@ public class Debug extends Command
 
     private String getSozekMomentString()
     {
-        long msLeft = ConvertTime.getTimeLeft(Statics.SOZEK_MOMENT_COOLDOWN_MS, MessageListener.getLastSozekMomentPosted());
+        long msLeft = ConvertTime.getTimeLeft(Statics.SOZEK_MOMENT_COOLDOWN_MS, SozekListener.getLastSozekMomentPosted());
 
         if(msLeft == 0)
             return "**sozek moment** - ✅\n";

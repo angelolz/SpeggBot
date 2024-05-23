@@ -19,7 +19,6 @@ public class MessageListener extends ListenerAdapter
     private static final Map<String, Long> pingCoolDowns = new HashMap<>();
     private static final Map<String, Long> meowCoolDowns = new HashMap<>();
 
-    private static long lastSozekMomentPosted = 0;
 
     @Override
     public void onMessageReceived(@NotNull MessageReceivedEvent event)
@@ -33,8 +32,7 @@ public class MessageListener extends ListenerAdapter
         if(event.getMessage().getContentRaw().contains(selfMention))
             executePing(event);
 
-        if(userId.equals(Statics.SOZEK_ID) || userId.equals(Statics.SOZEK_ALT_ID))
-            sendFunnySozekMoment(event);
+
 
         if(event.getMessage().getContentRaw().contains(":3"))
             sendMeow(event);
@@ -61,23 +59,7 @@ public class MessageListener extends ListenerAdapter
         }
     }
 
-    private void sendFunnySozekMoment(MessageReceivedEvent event)
-    {
-        if(System.currentTimeMillis() - lastSozekMomentPosted < Statics.SOZEK_MOMENT_COOLDOWN_MS || rng.nextDouble() > 0.0122)
-            return;
 
-        File sozekFolder = new File("img/sozek");
-        if(!sozekFolder.exists())
-            return;
-
-        File[] files = sozekFolder.listFiles();
-        if(files == null || files.length == 0)
-            return;
-
-        FileUpload fu = FileUpload.fromData(files[rng.nextInt(files.length)]);
-        event.getChannel().sendFiles(fu).queue();
-        lastSozekMomentPosted = System.currentTimeMillis();
-    }
 
     private void sendMeow(MessageReceivedEvent event)
     {
@@ -99,10 +81,6 @@ public class MessageListener extends ListenerAdapter
         return pingCoolDowns;
     }
 
-    public static long getLastSozekMomentPosted()
-    {
-        return lastSozekMomentPosted;
-    }
 
     public static Map<String, Long> getMeowCoolDowns()
     {
